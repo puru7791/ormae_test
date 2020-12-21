@@ -2,14 +2,14 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: ingress-wildcard-host
+  name: ingress-api
 spec:
   rules:
   - host: "myapplication.com"
     http:
       paths:
-      - pathType: Prefix
-        path: "/myapp"
+      - pathType: 
+        path: "/frontend"
         backend:
           service:
             name: myapp
