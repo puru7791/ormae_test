@@ -2,15 +2,14 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata: 
-  name: frontend
-  env: prod
+  name: openmrs-deploy
 spec:
   minReadySeconds: 10
-  replicas: 9
+  replicas: 2
   selector: 
     matchLabels:
-      app: frontend
-      ver: 1.0
+      app: openmrs
+      ver: 0.1
   strategy:
     rollingUpdate:
       maxSurge: 35%
@@ -19,12 +18,14 @@ spec:
   template:
     metadata:
       labels:
-        app: frontend
+        app: gol
         ver: 1.0
     spec:
+      imagePullSecrets:
+        - name: registrypullsecret
       containers: 
-        - name: frontend
-          image: <>
+        - name: gameoflife
+          image: puru7791/myopenmrs:0.1
           ports:
             - containerPort: 8080
               protocol: TCP
