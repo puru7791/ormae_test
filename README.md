@@ -320,9 +320,9 @@ docker push <dockerhub-name/image:tags>
 
 ### Now we have to write the kubernetes object notations for openmrs deployments on k8s
 
-* Firstly we will write deployments, services, and K8s Ingress for our openmrs application
-* I used azure storage for storing data and I claimed the bit of storage by writing Persistent VolumeClaim object file 
-* Now create those obects by using kubernetes imperative commands
+* Firstly we will write deployments, services, and K8s Ingress resource objects for our openmrs application
+* I used azure storage for storing data and I claimed the bit of storage by writing Persistent VolumeClaim object file. 
+* Now create those obects by using kubernetes imperative commands.
 
 ```bash
 kubectl apply -f <manifest-file> 
